@@ -1,7 +1,7 @@
 from datetime import datetime
 
 # Import validation functions
-from task_manager.validation import(
+from .validation import (
     validate_task_title,
     validate_task_description,
     validate_due_date
@@ -39,7 +39,7 @@ def add_task(title, description, due_date):
             print(f"Error: {error}")
             return
 
-    print("No error")
+   
 
     task={
         "title":title,
@@ -49,14 +49,15 @@ def add_task(title, description, due_date):
     }
     tasks.append(task)
     #print(f"Task '{title}' added successfully!")
-    print("Task added successfully")
+    print("No error")
+    print("Task added successfully!")
     
 # Implement mark_task_as_complete function
 def mark_task_as_complete(index, tasks=tasks):
     if 0 <= index < len(tasks):
         tasks[index]["completed"]=True
         #print(f"Task '{tasks[index]['title']}' marked as complete!")
-        print("Task marked as complete")
+        print("Task marked as complete!")
     else:
         print("Invalid task index.")
     
