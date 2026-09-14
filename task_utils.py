@@ -34,7 +34,11 @@ def add_task(title, description, due_date):
     ]
 
     for validate_func, value in validations:
-        valid, error = validate_func(value)
+        try:
+            valid, error = validate_func(value)
+        except ValueError as e:
+            print(f"Error: {e}")
+            return
         if not valid:
             print(f"Error: {error}")
             return
